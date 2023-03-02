@@ -1,0 +1,31 @@
+{
+  "name": "my-lambda-function",
+  "version": "9.5.1",
+  "description": "My Lambda Function",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm install-test",
+    "build": "npm run clean  && npm run compile && npm run zip",
+    "clean": "rm -rf mylogs",
+    "compile": "tsc",
+    "zip": "mkdir -p mylogs && cd src && zip -r ../mylogs/my-deployment.zip ."
+  },
+  "keywords": [
+    "succes"
+  ],
+  "author": "Steven",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlphaGenessisTech/bluedrop_project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlphaGenessisTech/bluedrop_project/issues"
+  },
+  "homepage": "https://github.com/AlphaGenessisTech/bluedrop_project#readme",
+
+"DevDependencies": {
+  "archiver": "^5.3.0",
+  "typescript": "^4.5.5"
+}
+}
