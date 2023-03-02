@@ -1,0 +1,26 @@
+name: Deploy Lambda
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2.4.2
+      with:
+        node-version: '14.x'
+    - name: Install dependencies
+      run: npm install
+    - name: Build function
+      run: npm run build
+    - name: Package function
+      run: npm run package
+    - name: Deploy function
+      run: |
+        terraform init
+        terraform apply -auto-approve
