@@ -38,4 +38,4 @@ jobs:
         terraform apply -auto-approve
         
     - name: Terraform apply
-         terraform destroy  -auto-approve =true
+         terraform destroy  -auto-approve
